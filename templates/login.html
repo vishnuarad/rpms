@@ -1,0 +1,154 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title> Login </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<style>
+			body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+            background-size: cover;
+			background-image: url("https://img.freepik.com/free-photo/solid-green-wall-textured-backdrop_53876-143106.jpg");
+		}
+		.user_card {
+			height: 400px;
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #862B0D;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+		.brand_logo_container {
+			position: absolute;
+			height: 170px;
+			width: 170px;
+			top: -75px;
+			border-radius: 50%;
+			background: #862B0D;
+			padding: 10px;
+			text-align: center;
+		}
+		.brand_logo {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			border: 2px solid white;
+		}
+		.form_container {
+			margin-top: 100px;
+		}
+		.login_btn {
+			width: 100%;
+			background: #7B8670  !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #7B8670 !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+			background-color: #7B8670  !important;
+		}
+        .navbar-brand{
+    color: #FFF9C9;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+} 
+.navbar-brand:hover{
+  color: black;
+} 
+.error{
+  color: gray;
+}
+.error>h3{
+  font-size: 15px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar" style="background-color: #862B0D;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www.cbit.ac.in/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Chaitanya_Bharathi_Institute_of_Technology_logo.png" alt="Logo" width="30" height="34" class="d-inline-block align-text-top">
+            &nbsp;Chaitanya Bharathi Institute of Technology
+          </a>
+        </div>
+      </nav>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="https://www.logolynx.com/images/logolynx/cf/cffb5a6fd7e0bf1a9e4630f399d74921.png" style="image-orientation: from-image;" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form action="/login/" method="POST">
+						{% csrf_token %}  
+                        <center>
+                        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color:#FFF9C9 ;">Login</h2></center><BR>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="username" name="username" class="form-control input_user" value="" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" id="password" name="password" class="form-control input_pass" value="" placeholder="password">
+						</div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="submit" name="button" class="btn login_btn">Login</button>
+				   </div>
+				   <div class="error">
+              <br>
+              <p style="color:rgb(255, 127, 127);font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                {% for message in messages %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                </svg>
+            {{ message }}</p>
+            {%endfor%}
+            </div>
+					</form>
+				</div>	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
